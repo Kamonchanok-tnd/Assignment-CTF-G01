@@ -6,7 +6,7 @@ import { Image, Card } from "antd";
 import CheckAnswer from "../../service";
 import Island1_2 from "../island1-2/island1-2";
 
-const Island1: React.FC<{ onClose: () => void }> = ({ onClose }) => {
+const Island1: React.FC<{ onClose: () => void; addItem: (item: string, details: string) => void }> = ({ onClose, addItem }) => {
   const [name, setName] = useState(""); // ชื่อ
   const [value, setValue] = useState(""); // คำตอบที่ผู้ใช้กรอก
   const [showIsland1, setShowIsland1] = useState(true); // ควบคุมการแสดง Island1
@@ -31,7 +31,8 @@ const Island1: React.FC<{ onClose: () => void }> = ({ onClose }) => {
   const handleCloseIsland1_2 = () => {
     setShowIsland1_2(false); // ปิด Popup Island1_2
     onClose(); // แจ้ง Parent Component เพื่อปิด Popup
-  };
+};
+
 
   return (
     <>
@@ -107,7 +108,7 @@ const Island1: React.FC<{ onClose: () => void }> = ({ onClose }) => {
       )}
 
       {/* แสดง Island1_2 เมื่อ showIsland1_2 = true */}
-      {showIsland1_2 && <Island1_2 onClose={handleCloseIsland1_2} />}
+      {showIsland1_2 && <Island1_2 onClose={handleCloseIsland1_2} addItem={addItem} />}
     </>
   );
 };
