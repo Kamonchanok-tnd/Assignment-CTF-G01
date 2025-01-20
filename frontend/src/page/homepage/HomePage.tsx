@@ -39,7 +39,7 @@ const HomePage: React.FC = () => {
         {challenges.map((challenge) => (
           <Link
             key={challenge.id}
-            to={`/challenge/${challenge.id}`}
+            to={`/rsa`}
             className="diamond"
             style={{ left: challenge.x, top: challenge.y }}
             onClick={() => addItemToInventory(`item${challenge.id}`)}
