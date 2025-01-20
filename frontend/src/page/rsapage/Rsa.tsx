@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Rsa.css";
-import p from '../../assets/TOUCHTHANAWAT (1).png'
+import p from '../../assets/ดีไซน์ที่ยังไม่ได้ตั้งชื่อ (7).png'
 import { Image } from "antd";
 import paintext from '../../assets/ดีไซน์ที่ยังไม่ได้ตั้งชื่อ (5).png'
 import { Card } from 'antd';

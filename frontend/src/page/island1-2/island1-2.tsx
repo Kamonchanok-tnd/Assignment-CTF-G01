@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import "./Island1-2.css"; // สร้างไฟล์ CSS เฉพาะสำหรับ Popup นี้
 import { Card } from "antd";
 import CheckAnswer from "../../service";
-
+import happy from '../../assets/happy.gif'
+import cry from "../../assets/cry.gif"
+import {  message } from 'antd';
 const Island1_2: React.FC<{
   onClose: () => void;
   addItem: (item: string, details: string) => void;
@@ -19,11 +21,18 @@ const Island1_2: React.FC<{
     e.preventDefault();
     try {
       const response = await CheckAnswer(name, value); // ตรวจคำตอบ
-      alert(`Success: ${response.message}`); // แจ้งเตือนเมื่อคำตอบถูกต้อง
+      console.log(response.message);
+      message.success({
+        content: ' ถูกต้องแล้วจ้า ไปกันต่อ!!!',
+        icon: <img src={happy} alt="Success" style={{ width: 24, height: 24 }} />,
+      });
       addItem("heart", ` ${value}`); // ส่งข้อมูลไอเท็มไปยัง inventory
       onClose(); // ปิด popup
     } catch (error) {
-      alert(`Wrong answer. Please try again.`); // แจ้งเตือนเมื่อคำตอบผิด
+      message.error({
+        content: ' ยังไม่ถูกลองใหม่นะ',
+        icon: <img src={cry} alt="Success" style={{ width: 24, height: 24 }} />,
+      });
     }
   };
 
