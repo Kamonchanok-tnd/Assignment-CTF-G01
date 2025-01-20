@@ -38,7 +38,7 @@ func CheckAnswer(c *gin.Context) {
 
 	// Return a success response
 	c.JSON(http.StatusOK, gin.H{
-		"message": "Answer verified successfully",
+		"message": "Correct! Well done.",
 		"name":    answer.Name,
 		"value":   inputData.Value,
 	})

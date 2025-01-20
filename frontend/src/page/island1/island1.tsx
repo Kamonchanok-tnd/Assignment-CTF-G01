@@ -7,19 +7,23 @@ import { Image, Card } from "antd";
 import CheckAnswer from "../../service";
 
 const Island1: React.FC<{ onClose: () => void }> = ({ onClose }) => {
-  const [name, setName] = useState("Caesar");
+  const [name, setName] = useState(""); // เริ่มต้นเป็นค่าว่าง
   const [value, setValue] = useState("");
-  const [result, setResult] = useState("");
   const navigate = useNavigate(); // สร้าง instance สำหรับเปลี่ยนเส้นทาง
+
+  // ตั้งค่าชื่อให้เป็น "Caesar" ในช่วงเวลาอื่น เช่น เมื่อ form ถูก mount
+  React.useEffect(() => {
+    setName("Caesar");
+  }, []); // เรียกครั้งเดียวเมื่อ component ถูก mount
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       const response = await CheckAnswer(name, value); // เรียกใช้ฟังก์ชัน CheckAnswer
-      setResult(`Success: ${response.message}`);
-      navigate("/deeja"); // เปลี่ยนหน้าไปที่ /deeja เมื่อคำตอบถูกต้อง
+      alert(`Success: ${response.message}`); // แจ้งเตือนเมื่อคำตอบถูกต้อง
+      navigate("/deeja"); // เปลี่ยนเส้นทางไปยัง /deeja
     } catch (error) {
-      setResult(`Wrong answer. Please try again.`);
+      alert(`Wrong answer. Please try again.`); // แจ้งเตือนเมื่อคำตอบผิด
     }
   };
 

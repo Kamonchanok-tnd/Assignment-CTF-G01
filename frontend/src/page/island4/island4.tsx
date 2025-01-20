@@ -1,21 +1,29 @@
 import React, { useState } from "react";
 import "./Island4.css";
 import IVFile from "../../assets/IV.txt"; // Import ไฟล์โดยตรง
+import CheckAnswer from "../../service";
+
 
 const Island4: React.FC<{ onClose: () => void }> = ({ onClose }) => {
-  const [answer, setAnswer] = useState(""); // เก็บคำตอบที่ผู้ใช้กรอก
+  const [name, setName] = useState(""); // เริ่มต้นเป็นค่าว่าง
+  const [value, setValue] = useState("");
+
+  React.useEffect(() => {
+      setName("Plaintext");
+    }, []);
 
   const handleDownload = () => {
     window.open(IVFile, "_blank"); // เปิดไฟล์ในแท็บใหม่
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (answer.trim() === "correct_answer") {
-      alert("Correct! Well done.");
-      onClose(); // ปิด Popup
-    } else {
-      alert("Wrong answer. Please try again.");
+    try {
+      const response = await CheckAnswer(name, value); // เรียกใช้ฟังก์ชัน CheckAnswer
+      alert(`Success: ${response.message}`); // แจ้งเตือนเมื่อคำตอบถูกต้อง
+      onClose(); // ปิด popup
+    } catch (error) {
+      alert(`Wrong answer. Please try again.`); // แจ้งเตือนเมื่อคำตอบผิด
     }
   };
 
@@ -37,8 +45,8 @@ const Island4: React.FC<{ onClose: () => void }> = ({ onClose }) => {
             <input
               type="text"
               id="answer"
-              value={answer}
-              onChange={(e) => setAnswer(e.target.value)}
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
               className="answer-input"
             />
             <button type="submit" className="submit-button">

@@ -1,19 +1,28 @@
 import React, { useState } from "react";
 import "./Island2.css"; // สร้างไฟล์ CSS เฉพาะสำหรับ Popup นี้
 import {Card } from "antd";
+import CheckAnswer from "../../service";
 
 const Island2: React.FC<{ onClose: () => void }> = ({ onClose }) => {
-  const [answer, setAnswer] = useState(""); // เก็บคำตอบที่ผู้ใช้กรอก
+  const [name, setName] = useState(""); // เริ่มต้นเป็นค่าว่าง
+  const [value, setValue] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // ตั้งค่าชื่อให้เป็น "Caesar" ในช่วงเวลาอื่น เช่น เมื่อ form ถูก mount
+  React.useEffect(() => {
+    setName("Plaintext");
+  }, []); // เรียกครั้งเดียวเมื่อ component ถูก mount
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (answer.trim() === "correct_answer") { // ตรวจสอบคำตอบ
-      alert("Correct! Well done.");
-      onClose(); // ปิด Popup
-    } else {
-      alert("Wrong answer. Please try again.");
+    try {
+      const response = await CheckAnswer(name, value); // เรียกใช้ฟังก์ชัน CheckAnswer
+      alert(`Success: ${response.message}`); // แจ้งเตือนเมื่อคำตอบถูกต้อง
+      onClose(); // ปิด popup
+    } catch (error) {
+      alert(`Wrong answer. Please try again.`); // แจ้งเตือนเมื่อคำตอบผิด
     }
   };
+
 
   return (
     <div className="popup-blue">
@@ -37,8 +46,8 @@ const Island2: React.FC<{ onClose: () => void }> = ({ onClose }) => {
           <input
             type="text"
             id="answer"
-            value={answer}
-            onChange={(e) => setAnswer(e.target.value)}
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
             className="answer-input"
           />
           <div className="submit">
