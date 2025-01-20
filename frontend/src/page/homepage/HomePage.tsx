@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 import "./HomePage.css";
-import Island2 from "../island2/Island2"; // Import Island components
 import Island1 from "../island1/island1";
+import Island2 from "../island2/Island2";
 import Island3 from "../island3/island3";
 import Island4 from "../island4/island4";
 import Island5 from "../island5/island5";
 
 const HomePage: React.FC = () => {
-  const [inventory, setInventory] = useState<string[]>([]);
+  const [inventory, setInventory] = useState<{ item: string; details: string }[]>([]);
   const [showPopup, setShowPopup] = useState(false);
+  const [showDetailPopup, setShowDetailPopup] = useState(false); // Popup สำหรับแสดงรายละเอียดไอเทม
+  const [selectedItem, setSelectedItem] = useState<{ item: string; details: string } | null>(null); // ไอเทมที่เลือก
   const [currentChallenge, setCurrentChallenge] = useState<number | null>(null);
 
-  const addItemToInventory = (item: string) => {
+  const addItemToInventory = (item: string, details: string) => {
     if (inventory.length < 3) {
-      setInventory([...inventory, item]);
+      setInventory([...inventory, { item, details }]);
     } else {
       alert("Inventory is full!");
     }
@@ -22,6 +24,11 @@ const HomePage: React.FC = () => {
   const handlePopupClose = () => {
     setShowPopup(false);
     setCurrentChallenge(null); // Reset challenge ID
+  };
+
+  const handleDetailPopupClose = () => {
+    setShowDetailPopup(false); // ปิด Detail Popup
+    setSelectedItem(null);
   };
 
   const challenges = [
@@ -37,7 +44,12 @@ const HomePage: React.FC = () => {
       case 1:
         return <Island1 onClose={handlePopupClose} />;
       case 2:
-        return <Island2 onClose={handlePopupClose} />;
+        return (
+          <Island2
+            onClose={handlePopupClose}
+            addItem={(item, details) => addItemToInventory(item, details)}
+          />
+        );
       case 3:
         return <Island3 onClose={handlePopupClose} />;
       case 4:
@@ -58,11 +70,20 @@ const HomePage: React.FC = () => {
       {/* Inventory */}
       <div className="inventory-container">
         {Array.from({ length: 3 }).map((_, index) => (
-          <div className="inventory-slot" key={index}>
+          <div
+            className="inventory-slot"
+            key={index}
+            onClick={() => {
+              if (inventory[index]) {
+                setSelectedItem(inventory[index]); // ตั้งค่าไอเทมที่ถูกเลือก
+                setShowDetailPopup(true); // แสดง Popup รายละเอียด
+              }
+            }}
+          >
             {inventory[index] ? (
               <img
-                src={`src/assets/${inventory[index]}.png`}
-                alt={inventory[index]}
+                src={`src/assets/${inventory[index].item}.png`}
+                alt={inventory[index].item}
               />
             ) : null}
           </div>
@@ -88,13 +109,23 @@ const HomePage: React.FC = () => {
 
       {/* Popup */}
       {showPopup && currentChallenge !== null && (
-  <div className="popup-overlay">
-    <div className="popup-content">
-      {renderIsland()} {/* Render dynamic Island component */}
-    </div>
-  </div>
-)}
+        <div className="popup-overlay">
+          <div className="popup-content">{renderIsland()}</div>
+        </div>
+      )}
 
+      {/* Detail Popup */}
+      {showDetailPopup && selectedItem && (
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <h2>Item Details</h2>
+            <p>{selectedItem.details}</p>
+            <button className="close-button" onClick={handleDetailPopupClose}>
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
