@@ -1,0 +1,103 @@
+/* Inventory Section */
+.inventory-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 5px;
+}
+
+.inventory-slot {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.inventory-slot:hover {
+  transform: scale(1.1);
+}
+
+.inventory-slot img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Map Section */
+.map-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("src/assets/1.jpeg");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.diamond {
+  position: absolute;
+  width: 60px;
+  height: 100px;
+  background-image: url("src/assets/daimond.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.diamond:hover {
+  transform: scale(1.2);
+}
+
+/* ชื่อเกาะ */
+.diamond-text {
+  position: absolute;
+  top: 100%; /* เลื่อนข้อความลงไปใต้ไดมอน */
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-size: 14px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8); /* เพิ่มเงาสำหรับข้อความ */
+  font-family: 'Arial', sans-serif;
+  white-space: nowrap; /* ป้องกันข้อความยาวตกบรรทัด */
+}
+.ctf-sign {
+  position: absolute;
+  top: 10%; /* จัดให้อยู่ตรงกลางแนวตั้ง */
+  left: 60%; /* จัดให้อยู่ตรงกลางแนวนอน */
+  transform: translate(-50%, -50%); /* ปรับให้จุดอ้างอิงอยู่ตรงกลาง */
+  width: q00px; /* เพิ่มขนาดของป้าย */
+  height:  300px; /* รักษาสัดส่วนของป้าย */
+  background-image: url("src/assets/ctf-sign.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ctf-sign-text {
+  font-size: 24px; /* ขยายขนาดข้อความ */
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8); /* เพิ่มเงาให้ข้อความ */
+  text-align: center;
+}
