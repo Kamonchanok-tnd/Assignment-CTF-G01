@@ -9,7 +9,7 @@ const Island1_2: React.FC<{ onClose: () => void }> = ({ onClose }) => {
 
   // ตั้งค่าชื่อให้เป็น "Plaintext" เมื่อ component ถูก mount
   React.useEffect(() => {
-    setName("Plaintext");
+    setName("Key");
   }, []); // เรียกครั้งเดียวเมื่อ component ถูก mount
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -26,7 +26,7 @@ const Island1_2: React.FC<{ onClose: () => void }> = ({ onClose }) => {
   return (
     <div className="island1-2-popup-blue">
       <div className="island1-2-popup-header">
-        <h2>Island 1-2 Challenge</h2>
+        <h2>Island 1 Challenge</h2>
         <button className="island1-2-close-button" onClick={onClose}>
           X
         </button>
@@ -34,14 +34,9 @@ const Island1_2: React.FC<{ onClose: () => void }> = ({ onClose }) => {
       <div className="island1-2-popup-content">
         <Card bordered={false} className="island1-2-custom-cardh">
           <p>
-            🕵️‍♂️🕵️‍♂️​​🕵️‍♂️​​ ตามหา PLAINTEXT!!! 🕵️‍♂️🕵️‍♂️​​🕵️‍♂️​​<br />
+            🕵️‍♂️🕵️‍♂️​​🕵️‍♂️​​ ตามหา KEY!!! 🕵️‍♂️🕵️‍♂️​​🕵️‍♂️​​<br />
             <br />
-            TheSu ranar eeUnu versu tyo fTec hnolo gyusa natuo nalpu blucu nuv ersut yunNa
-            khonR atcha sumaP rov unceT heunu versu tywa sest ablus hedon 27Jul y1990
-            becom ungfu llyo perat uonal ThePl aunte xtusu can't fundy ours ulver lunun
-            gudon 'tmean tojud geun1 993ut usnam edaft erTh aoSur anaru thelo calhe
-            roune ofNa khonR atcha sumau tuson eofnu neNa tuona lRese archU nuver
-            sutue sofTh aulan d
+            Fhenanerr Havirefvgl bs Grpuabybtl jnf rfgnoyvfurq nf na choyvp nhgbabzbhf havirefvgl bhgfvqr gur pvivy freivpr flfgrz, haqre gur fhcreivfvba bs gur Eblny Gunv Tbireazrag, cebzbgvat nqzvavfgengvir cebsvpvrapl naq rssvpvrapl va vgf bcrengvbaf; n fpubyneyl pbzzhavgl pbafvfgvat bs gur yrnearq naq gur yrnearef, nf jryy nf Gur Xrl vf 22q97n2q0qs69op9nponn37750o105n456664q635pr507nnr09s0s8r0non5r91 nyy xvaqf bs xabjyrqtr va Negf, Fpvraprf naq Grpuabybtl, orarsvpvny gb obgu vaqvivqhnyf naq fbpvrgl.  Guvf havirefvgl svezyl cyrqtrf gb znvagnva rkpryyrapr va nyy bs vgf pbzzvgzragf; gb nqinapr gur dhnyvgl bs yvsr; gb frrx nccyvpngvbaf va gur pbyyrpgvba naq perngvba bs xabjyrqtr, zbeny rgubf naq jvfqbz, sbe gur rgreany tebjgu bs uhznaxvaq.
             <br />
           </p>
         </Card>

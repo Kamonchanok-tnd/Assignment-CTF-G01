@@ -9,7 +9,7 @@ const Island4: React.FC<{ onClose: () => void }> = ({ onClose }) => {
   const [value, setValue] = useState("");
 
   React.useEffect(() => {
-      setName("Plaintext");
+      setName("IV");
     }, []);
 
   const handleDownload = () => {
