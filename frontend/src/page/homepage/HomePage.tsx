@@ -30,6 +30,7 @@ const HomePage: React.FC = () => {
     setShowDetailPopup(false); // ปิด Detail Popup
     setSelectedItem(null);
   };
+  console.log("Inventory updated:", inventory);
 
   const challenges = [
     { id: 1, name: "Island 1", x: "17%", y: "44%" },
@@ -42,7 +43,13 @@ const HomePage: React.FC = () => {
   const renderIsland = () => {
     switch (currentChallenge) {
       case 1:
-        return <Island1 onClose={handlePopupClose} />;
+        return (
+          <Island1
+            onClose={handlePopupClose}
+            addItem={(item, details) => addItemToInventory(item, details)} // ส่ง addItem ไปที่ Island1
+          />
+        );
+      
       case 2:
         return (
           <Island2
@@ -52,15 +59,20 @@ const HomePage: React.FC = () => {
         );
       case 3:
         return <Island3 onClose={handlePopupClose} />;
-      case 4:
-        return <Island4 onClose={handlePopupClose} />;
+      case 4: // เพิ่ม addItem
+        return (
+          <Island4
+            onClose={handlePopupClose}
+            addItem={(item, details) => addItemToInventory(item, details)}
+          />
+        );
       case 5:
         return <Island5 onClose={handlePopupClose} />;
       default:
         return null;
     }
   };
-
+  
   return (
     <div className="map-container">
       <div className="ctf-sign">
@@ -71,22 +83,25 @@ const HomePage: React.FC = () => {
       <div className="inventory-container">
         {Array.from({ length: 3 }).map((_, index) => (
           <div
-            className="inventory-slot"
-            key={index}
-            onClick={() => {
-              if (inventory[index]) {
-                setSelectedItem(inventory[index]); // ตั้งค่าไอเทมที่ถูกเลือก
-                setShowDetailPopup(true); // แสดง Popup รายละเอียด
-              }
-            }}
-          >
-            {inventory[index] ? (
-              <img
-                src={`src/assets/${inventory[index].item}.png`}
-                alt={inventory[index].item}
-              />
-            ) : null}
-          </div>
+          className="inventory-slot"
+          key={index}
+          onClick={() => {
+            if (inventory[index]) {
+              console.log("Item clicked:", inventory[index]); // Debugging
+              setSelectedItem(inventory[index]); // ตั้งค่าไอเทมที่ถูกเลือก
+              setShowDetailPopup(true); // แสดง Popup รายละเอียด
+            }
+          }}
+        >
+          {inventory[index] ? (
+            <img
+              src={`src/assets/${inventory[index].item}.png`}
+              alt={inventory[index].item}
+              style={{ width: "100%", height: "100%" }} // ให้ไอเท็มเต็มกล่อง
+            />
+          ) : null}
+        </div>
+        
         ))}
       </div>
 
@@ -114,18 +129,24 @@ const HomePage: React.FC = () => {
         </div>
       )}
 
-      {/* Detail Popup */}
-      {showDetailPopup && selectedItem && (
-        <div className="popup-overlay">
-          <div className="popup-content">
-            <h2>Item Details</h2>
-            <p>{selectedItem.details}</p>
-            <button className="close-button" onClick={handleDetailPopupClose}>
-              Close
-            </button>
-          </div>
-        </div>
-      )}
+{showDetailPopup && selectedItem && (
+  <div className="popup-item-overlay">
+    <div className="popup-item-content">
+      <button
+        className="popup-item-close-button"
+        onClick={handleDetailPopupClose}
+      >
+        X
+      </button>
+      <h2>Item Details</h2>
+      <p>{selectedItem.details}</p>
+    </div>
+  </div>
+)}
+
+
+
+
     </div>
   );
 };
