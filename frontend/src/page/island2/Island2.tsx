@@ -18,7 +18,7 @@ const Island2: React.FC<{ onClose: () => void; addItem: (item: string, details: 
       const response = await CheckAnswer(name, value); // เรียกใช้ฟังก์ชัน CheckAnswer
       alert(`Success: ${response.message}`); // แจ้งเตือนเมื่อคำตอบถูกต้อง
       console.log("Correct answer submitted:", value); // Debugging ตรวจสอบคำตอบที่ส่งไป
-      addItem("heart", `Correct answer: ${value}`); // เพิ่มไอเท็มไปยัง Inventory พร้อมรายละเอียด
+      addItem("heart", `${value}`); // เพิ่มไอเท็มไปยัง Inventory พร้อมรายละเอียด
       console.log("Item added to inventory:", { item: "heart", details: `Correct answer: ${value}` }); // Debugging
       onClose(); // ปิด popup
     } catch (error) {
