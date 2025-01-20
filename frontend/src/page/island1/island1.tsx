@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "./Island1.css";
-import p from "../../assets/TOUCHTHANAWAT (1).png";
+import p from "../../assets/ดีไซน์ที่ยังไม่ได้ตั้งชื่อ (7).png";
 import paintext from "../../assets/ดีไซน์ที่ยังไม่ได้ตั้งชื่อ (5).png";
 import { Image, Card } from "antd";
 import CheckAnswer from "../../service";
 import Island1_2 from "../island1-2/island1-2";
+import { message } from 'antd';
+import happy from '../../assets/happy.gif'
+import cry from "../../assets/cry.gif"
+import RSACAL from "../../assets/RSA.txt"
 
 const Island1: React.FC<{ onClose: () => void; addItem: (item: string, details: string) => void }> = ({ onClose, addItem }) => {
   const [name, setName] = useState(""); // ชื่อ
@@ -20,19 +24,28 @@ const Island1: React.FC<{ onClose: () => void; addItem: (item: string, details: 
     e.preventDefault();
     try {
       const response = await CheckAnswer(name, value); // ตรวจคำตอบ
-      alert(`Success: ${response.message}`); // แจ้งเตือนเมื่อคำตอบถูกต้อง
+      console.log(response.message);
+      message.success({
+        content: ' ถูกต้องแล้วจ้า ไปกันต่อ!!!',
+        icon: <img src={happy} alt="Success" style={{ width: 24, height: 24 }} />,
+      });
       setShowIsland1(false); // ซ่อน Island1
       setShowIsland1_2(true); // แสดง Island1_2
     } catch (error) {
-      alert(`Wrong answer. Please try again.`); // แจ้งเตือนเมื่อคำตอบผิด
+      message.error({
+        content: ' ยังไม่ถูกลองใหม่นะ',
+        icon: <img src={cry} alt="Success" style={{ width: 24, height: 24 }} />,
+      });
     }
   };
 
   const handleCloseIsland1_2 = () => {
     setShowIsland1_2(false); // ปิด Popup Island1_2
     onClose(); // แจ้ง Parent Component เพื่อปิด Popup
-};
-
+  };
+  const handleDownload = () => {
+    window.open(RSACAL, "_blank"); // เปิดไฟล์ในแท็บใหม่
+  };
 
   return (
     <>
@@ -50,13 +63,13 @@ const Island1: React.FC<{ onClose: () => void; addItem: (item: string, details: 
               <div className="row">
                 <div className="column">
                   <Card bordered={false} className="custom-card">
-                    <p className="label">p:</p>
+                    <p className="label">p :</p>
                     <Image src={p} alt="Placeholder" className="custom-image" />
                   </Card>
                 </div>
-                <div className="column">
+                <div className="column2">
                   <Card bordered={false} className="custom-card">
-                    <p className="label">PlainText:</p>
+                    <p className="label">PlainText :</p>
                     <div className="text-container">
                       <Image src={paintext} alt="Placeholder" className="custom-image" />
                       <p>happy birth year to you</p>
@@ -68,21 +81,25 @@ const Island1: React.FC<{ onClose: () => void; addItem: (item: string, details: 
                 </div>
                 <div className="column1">
                   <Card bordered={false} className="custom-card">
-                    <p className="label">e:</p>
+                    <p className="label">e :</p>
                     <p>15 บาท มทส-เมืองโคราช</p>
                   </Card>
                   <br />
                   <Card bordered={false} className="custom-card">
-                    <p className="label">q:</p>
+                    <p className="label">q :</p>
                     <a
-                      href="https://www.sut.ac.th/news/detail/4/news20160108"
+                      href="https://www.sut.ac.th/news/detail/4/news20160106?fbclid=IwY2xjawH7qy1leHRuA2FlbQIxMAABHTQotRDz9MybII5Ly45GACkwmVczqEnhZW-ewGlAlzHsEoGzXoxikYlI3A_aem_Xs-x7yp0BwUvooCqi_jAbw"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="link"
                     >
-                      https://www.sut.ac.th/news/detail/4/news20160108
+                      https://www.sut.ac.th/news/detail/4/
                     </a>
                   </Card>
+                  <p className="green">ดี : ๒หนึ่งสอง๙</p>
+                  <button className="download-button-island1" onClick={handleDownload}>
+                    Download For Easy Life
+                  </button>
                 </div>
               </div>
             </div>

@@ -4,6 +4,9 @@ import h1 from "../../assets/hash1.png"
 import h2 from "../../assets/hash 2.jpg"
 import { Image, Card } from "antd";
 import CheckAnswer from "../../service";
+import {  message } from 'antd';
+import sur from '../../assets/surprised.gif'
+import cry from "../../assets/cry.gif"
 
 const Island5: React.FC<{ onClose: () => void }> = ({ onClose }) => {
   const [name, setName] = useState(""); // เริ่มต้นเป็นค่าว่าง
@@ -17,10 +20,17 @@ const Island5: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     e.preventDefault();
     try {
       const response = await CheckAnswer(name, value); // เรียกใช้ฟังก์ชัน CheckAnswer
-      alert(`Success: ${response.message}`); // แจ้งเตือนเมื่อคำตอบถูกต้อง
+      console.log(response.message);
+      message.success({
+        content: ' ถูกต้องแล้วจ้า เก่งสุดๆไปเลย',
+        icon: <img src={sur} alt="Success" style={{ width: 24, height: 24 }} />,
+      });
       onClose(); // ปิด popup
     } catch (error) {
-      alert(`Wrong answer. Please try again.`); // แจ้งเตือนเมื่อคำตอบผิด
+      message.error({
+        content: ' ยังไม่ถูกลองใหม่นะ',
+        icon: <img src={cry} alt="Success" style={{ width: 24, height: 24 }} />,
+      });
     }
   };
 
