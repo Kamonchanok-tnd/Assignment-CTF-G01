@@ -23,11 +23,9 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="map-container">
-      {/* Inventory Section */}
       <div className="ctf-sign">
   <span className="ctf-sign-text">CTF Challenge</span>
 </div>
-
 
       <div className="inventory-container">
         {Array.from({ length: 3 }).map((_, index) => (
@@ -37,7 +35,6 @@ const HomePage: React.FC = () => {
         ))}
       </div>
 
-      {/* Map Section */}
       <div className="map">
         {challenges.map((challenge) => (
           <Link

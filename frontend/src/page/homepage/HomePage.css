@@ -1,8 +1,8 @@
 /* Inventory Section */
 .inventory-container {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 20px;
+  left: 20px;
   display: flex;
   gap: 5px;
 }
@@ -81,11 +81,11 @@
 }
 .ctf-sign {
   position: absolute;
-  top: 10%; /* จัดให้อยู่ตรงกลางแนวตั้ง */
-  left: 60%; /* จัดให้อยู่ตรงกลางแนวนอน */
+  top: 9%; /* จัดให้อยู่ตรงกลางแนวตั้ง */
+  left: 50%; /* จัดให้อยู่ตรงกลางแนวนอน */
   transform: translate(-50%, -50%); /* ปรับให้จุดอ้างอิงอยู่ตรงกลาง */
-  width: q00px; /* เพิ่มขนาดของป้าย */
-  height:  300px; /* รักษาสัดส่วนของป้าย */
+  width: 340px; /* เพิ่มขนาดของป้าย */
+  height:  280px; /* รักษาสัดส่วนของป้าย */
   background-image: url("src/assets/ctf-sign.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -95,9 +95,14 @@
 }
 
 .ctf-sign-text {
-  font-size: 24px; /* ขยายขนาดข้อความ */
-  color: white;
+  margin-top: 8%;
+  font-size: 30px;
+  color: #ffffff; /* สีเหลืองทอง */
   font-weight: bold;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8); /* เพิ่มเงาให้ข้อความ */
+  text-shadow: 0 4px 0px rgba(0, 0, 0, 0.9), 0 0 10px rgba(255, 255, 255, 0.8);
   text-align: center;
+  font-family: 'Verdana', sans-serif;
+  letter-spacing: 1.5px;
 }
+
+
