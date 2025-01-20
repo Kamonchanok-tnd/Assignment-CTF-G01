@@ -84,7 +84,7 @@
   top: 10%; /* จัดให้อยู่ตรงกลางแนวตั้ง */
   left: 60%; /* จัดให้อยู่ตรงกลางแนวนอน */
   transform: translate(-50%, -50%); /* ปรับให้จุดอ้างอิงอยู่ตรงกลาง */
-  width: 500px; /* เพิ่มขนาดของป้าย */
+  width: q00px; /* เพิ่มขนาดของป้าย */
   height:  300px; /* รักษาสัดส่วนของป้าย */
   background-image: url("src/assets/ctf-sign.png");
   background-size: contain;
