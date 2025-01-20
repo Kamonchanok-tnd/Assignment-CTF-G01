@@ -54,7 +54,7 @@ const Island1: React.FC<{ onClose: () => void }> = ({ onClose }) => {
             <div className="column1">
               <Card bordered={false} className="custom-card">
                 <p className="label">e:</p>
-                <p>15 บาท เข้างานเมืองโคราช</p>
+                <p>15 บาท มทส-เมืองโคราช</p>
               </Card>
               <br />
               <Card bordered={false} className="custom-card">
@@ -71,7 +71,7 @@ const Island1: React.FC<{ onClose: () => void }> = ({ onClose }) => {
             </div>
           </div>
         </div>
-        <form onSubmit={handleSubmit} className="form-container">
+        <form onSubmit={handleSubmit}>
           <label htmlFor="answer" className="answer-label">Answer:</label>
           <input
             type="text"
