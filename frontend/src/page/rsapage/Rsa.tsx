@@ -24,10 +24,10 @@ const CyberSecurityPage: React.FC = () => {
                 <div className="row">
                     <div className="column">
                         <Card bordered={false} style={{
-                            boxShadow: "0px 4px 8px rgba(64, 21, 62, 0.48)", // เงา
+                            boxShadow: "0px 4px 8px rgba(90, 6, 86, 0.48)", // เงา
                             borderRadius: "8px", // ตัวเลือกสำหรับมุมโค้ง
                         }}>
-                            <p>p : </p>
+                            <p style={{color:"green",fontSize:"25px",fontWeight:"bolder"}}>p : </p>
                             <Image
                                 src={p}
                                 alt="Placeholder"
@@ -37,10 +37,11 @@ const CyberSecurityPage: React.FC = () => {
                     </div>
                     <div className="column">
                         <Card bordered={false} style={{
-                            boxShadow: "0px 4px 8px rgba(64, 21, 62, 0.48)", // เงา
+                            boxShadow: "0px 4px 8px rgba(90, 6, 86, 0.48)", // เงา
                             borderRadius: "8px", // ตัวเลือกสำหรับมุมโค้ง
+                            height:"100%"
                         }}>
-                            <p>PlainText :</p>
+                            <p style={{color:"green",fontSize:"25px",fontWeight:"bolder"}}>PlainText :</p>
                             <div className="text-container">
                                 <Image
                                     src={paintext}
@@ -54,18 +55,20 @@ const CyberSecurityPage: React.FC = () => {
                     </div>
                     <div className="column2">
                         <Card bordered={false} style={{
-                            boxShadow: "0px 4px 8px rgba(64, 21, 62, 0.48)", // เงา
+                            boxShadow: "0px 4px 8px rgba(90, 6, 86, 0.48)", // เงา
                             borderRadius: "8px", // ตัวเลือกสำหรับมุมโค้ง
+                            height:"47.5%"
                         }}>
-                            <p>e :</p>
+                            <p style={{color:"green",fontSize:"25px",fontWeight:"bolder"}}>e :</p>
                             <p style={{ marginLeft: "10px" }}>15 บาท เข้างานเมืองโคราช</p>
                         </Card>
                         <br />
                         <Card bordered={false} style={{
                             boxShadow: "0px 4px 8px rgba(64, 21, 62, 0.48)", // เงา
                             borderRadius: "8px", // ตัวเลือกสำหรับมุมโค้ง
+                             height:"47.5%"
                         }}>
-                            <p>q :</p>
+                            <p style={{color:"green",fontSize:"25px",fontWeight:"bolder"}}>q :</p>
                             <a
                                 href="https://www.sut.ac.th/news/detail/4/news20160108"
                                 target="_blank"
