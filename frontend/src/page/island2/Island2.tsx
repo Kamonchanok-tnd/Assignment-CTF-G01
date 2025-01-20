@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Island2.css"; // สร้างไฟล์ CSS เฉพาะสำหรับ Popup นี้
+import {Card } from "antd";
 
 const Island2: React.FC<{ onClose: () => void }> = ({ onClose }) => {
   const [answer, setAnswer] = useState(""); // เก็บคำตอบที่ผู้ใช้กรอก
@@ -23,35 +24,14 @@ const Island2: React.FC<{ onClose: () => void }> = ({ onClose }) => {
         </button>
       </div>
       <div className="popup-content">
+      <Card bordered={false} className="custom-cardh">
         <p>
-          Solve the challenge and submit your answer below. Your task is to find
-          the right key to unlock this island!
-          Solve the challenge and submit your answer below. Your task is to find
-          the right key to unlock this island!
-          Solve the challenge and submit your answer below. Your task is to find
-          the right key to unlock this island!
-          Solve the challenge and submit your answer below. Your task is to find
-          the right key to unlock this island!
-          Solve the challenge and submit your answer below. Your task is to find
-          the right key to unlock this island!
-          Solve the challenge and submit your answer below. Your task is to find
-          the right key to unlock this island!
-          Solve the challenge and submit your answer below. Your task is to find
-          the right key to unlock this island!
-          Solve the challenge and submit your answer below. Your task is to find
-          the right key to unlock this island!
-          Solve the challenge and submit your answer below. Your task is to find
-          the right key to unlock this island!
-          Solve the challenge and submit your answer below. Your task is to find
-          the right key to unlock this island!
-          Solve the challenge and submit your answer below. Your task is to find
-          the right key to unlock this island!
-          Solve the challenge and submit your answer below. Your task is to find
-          the right key to unlock this island!\  Solve the challenge and submit your answer below. Your task is to find
-          the right key to unlock this island!
-          Solve the challenge and submit your answer below. Your task is to find
-          the right key to unlock this island!
+        🕵️‍♂️🕵️‍♂️​​🕵️‍♂️​​ ตามหา PLAINTEXT!!! 🕵️‍♂️🕵️‍♂️​​🕵️‍♂️​​<br/>
+        <br/>
+        TheSu ranar eeUnu versu tyo fTec hnolo gyusa natuo nalpu blucu nuv ersut yunNa khonR atcha sumaP rov unceT heunu versu tywa sest ablus hedon 27Jul y1990 becom ungfu llyo perat uonal ThePl aunte xtusu can't fundy ours ulver lunun gudon 'tmean tojud geun1 993ut usnam edaft erTh aoSur anaru thelo calhe roune ofNa khonR atcha sumau tuson eofnu neNa tuona lRese archU nuver sutue sofTh aulan d
+        <br/>
         </p>
+        </Card>
         <form onSubmit={handleSubmit}>
           <label htmlFor="answer">Answer:</label>
           <input
