@@ -54,7 +54,11 @@ func SetupDatabase() {
 		},
 		{
 			Name: "Caesar",
-			Value: "10",
+			Value: "2041",
+		},
+		{
+			Name: "Answer",
+			Value: "flag{983e480beecb4c8f4144b52270c1de5f290f1570c39d9bcc02acc9b35c2cdc46}",
 		},
 	}
 
