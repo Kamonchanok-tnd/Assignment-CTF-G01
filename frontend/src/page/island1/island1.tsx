@@ -40,6 +40,8 @@ const Island1: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                 <div className="text-container">
                   <Image src={paintext} alt="Placeholder" className="custom-image" />
                   <p>happy birth year to you</p>
+                  <p>🪨​🪨​🪨​ : </p>
+                  <p className="white-text">มออื่นไม่ได้อยู่ใน มทส.นิแล้วเกี่ยวกันยังไงนะ?เขามีอะไรที่มันเหมือนกันไหมนะ</p>
                 </div>
               </Card>
             </div>
