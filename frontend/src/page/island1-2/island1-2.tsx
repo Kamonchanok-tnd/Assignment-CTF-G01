@@ -3,7 +3,7 @@ import "./Island1-2.css"; // สร้างไฟล์ CSS เฉพาะส�
 import { Card } from "antd";
 import CheckAnswer from "../../service";
 
-const Island1_2: React.FC<{ onClose: () => void }> = ({ onClose }) => {
+const Island1_2: React.FC<{ onClose: () => void; addItem: (item: string, details: string) => void }> = ({ onClose, addItem }) => {
   const [name, setName] = useState(""); // เริ่มต้นเป็นค่าว่าง
   const [value, setValue] = useState("");
 
@@ -17,6 +17,7 @@ const Island1_2: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     try {
       const response = await CheckAnswer(name, value); // เรียกใช้ฟังก์ชัน CheckAnswer
       alert(`Success: ${response.message}`); // แจ้งเตือนเมื่อคำตอบถูกต้อง
+      addItem("heart", `Correct answer: ${value}`); // ส่งไอเท็มพร้อมรายละเอียดไปหน้า Homepage
       onClose(); // ปิด popup
     } catch (error) {
       alert(`Wrong answer. Please try again.`); // แจ้งเตือนเมื่อคำตอบผิด
