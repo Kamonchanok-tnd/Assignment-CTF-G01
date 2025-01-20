@@ -1,19 +1,25 @@
 import React, { useState } from "react";
-import "./Island1.css"; // สร้างไฟล์ CSS เฉพาะสำหรับ Popup นี้
+import { useNavigate } from "react-router-dom"; // นำเข้า useNavigate
+import "./Island1.css"; 
 import p from "../../assets/TOUCHTHANAWAT (1).png";
 import paintext from "../../assets/ดีไซน์ที่ยังไม่ได้ตั้งชื่อ (5).png";
 import { Image, Card } from "antd";
+import CheckAnswer from "../../service";
 
 const Island1: React.FC<{ onClose: () => void }> = ({ onClose }) => {
-  const [answer, setAnswer] = useState(""); // เก็บคำตอบที่ผู้ใช้กรอก
+  const [name, setName] = useState("Caesar");
+  const [value, setValue] = useState("");
+  const [result, setResult] = useState("");
+  const navigate = useNavigate(); // สร้าง instance สำหรับเปลี่ยนเส้นทาง
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (answer.trim() === "correct_answer") {
-      alert("Correct! Well done.");
-      onClose(); // ปิด Popup
-    } else {
-      alert("Wrong answer. Please try again.");
+    try {
+      const response = await CheckAnswer(name, value); // เรียกใช้ฟังก์ชัน CheckAnswer
+      setResult(`Success: ${response.message}`);
+      navigate("/deeja"); // เปลี่ยนหน้าไปที่ /deeja เมื่อคำตอบถูกต้อง
+    } catch (error) {
+      setResult(`Wrong answer. Please try again.`);
     }
   };
 
@@ -69,15 +75,15 @@ const Island1: React.FC<{ onClose: () => void }> = ({ onClose }) => {
           <label htmlFor="answer" className="answer-label">Answer:</label>
           <input
             type="text"
-            id="answer"
-            value={answer}
-            onChange={(e) => setAnswer(e.target.value)}
+            id="value"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
             className="answer-input"
           />
-           <div className="submit">
-          <button type="submit" className="submit-button">
-            Submit
-          </button>
+          <div className="submit">
+            <button type="submit" className="submit-button">
+              Submit
+            </button>
           </div>
         </form>
       </div>
