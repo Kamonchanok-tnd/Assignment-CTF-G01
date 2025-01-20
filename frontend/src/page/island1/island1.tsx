@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Island1.css";
-import p from "../../assets/TOUCHTHANAWAT (1).png";
+import p from "../../assets/TOUCHTHANAWAT (1).jpg";
 import paintext from "../../assets/ดีไซน์ที่ยังไม่ได้ตั้งชื่อ (5).png";
 import { Image, Card } from "antd";
 import CheckAnswer from "../../service";
