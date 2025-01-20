@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "./Island4.css";
+import IVFile from "../../assets/IV.txt"; // Import ไฟล์โดยตรง
 
 const Island4: React.FC<{ onClose: () => void }> = ({ onClose }) => {
   const [answer, setAnswer] = useState(""); // เก็บคำตอบที่ผู้ใช้กรอก
 
   const handleDownload = () => {
-    window.open("/path-to-your-file/document.pdf", "_blank");
+    window.open(IVFile, "_blank"); // เปิดไฟล์ในแท็บใหม่
   };
 
   const handleSubmit = (e: React.FormEvent) => {
