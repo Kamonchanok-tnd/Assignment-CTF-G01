@@ -1,34 +1,19 @@
-/* Inventory Section */
-.inventory-container {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  display: flex;
-  gap: 5px;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* ปิดการเลื่อน */
 }
 
-.inventory-slot {
-  width: 100px;
-  height: 100px;
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 2px solid #ccc;
-  border-radius: 10px;
+body {
+  font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+  background-color: #f0f0f0; /* เปลี่ยนพื้นหลังตามความต้องการ */
 }
-
-.inventory-slot:hover {
-  transform: scale(1.1);
-}
-
-.inventory-slot img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
 /* Map Section */
 .map-container {
   position: relative;
@@ -37,7 +22,7 @@
   background-image: url("src/assets/1.jpeg");
   background-size: cover;
   background-position: center;
-  overflow: hidden;
+  overflow: hidden; /* ปิดการเลื่อนภายใน map */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -104,5 +89,61 @@
   font-family: 'Verdana', sans-serif;
   letter-spacing: 1.5px;
 }
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* พื้นหลังโปร่งแสง */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: auto; /* ให้สามารถเลื่อนดูเนื้อหาได้ */
+}
 
 
+
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+
+/* Inventory Section */
+.inventory-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  gap: 5px;
+}
+
+.inventory-slot {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.inventory-slot:hover {
+  transform: scale(1.1);
+}
+
+.inventory-slot img {
+  max-width: 100%;
+  max-height: 100%;
+}
