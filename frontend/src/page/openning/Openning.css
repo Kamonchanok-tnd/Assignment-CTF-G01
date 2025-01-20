@@ -1,0 +1,34 @@
+.openning-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .openning-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ทำให้วิดีโอเต็มจอ */
+  }
+  
+  .skip-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.5); /* สีโปร่งใส */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: black;
+    transition: background-color 0.3s;
+  }
+  
+  .skip-button:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* เพิ่มความโปร่งใสเมื่อ hover */
+  }
+  

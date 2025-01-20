@@ -1,10 +1,11 @@
 package main
 
 import (
-	"fmt"
-	"net/http"
 	"ctf/config"
 	"ctf/controller"
+	"fmt"
+	"net/http"
+
 	"github.com/gin-gonic/gin"
 )
 

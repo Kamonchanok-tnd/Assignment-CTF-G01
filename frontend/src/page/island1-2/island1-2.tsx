@@ -3,14 +3,17 @@ import "./Island1-2.css"; // สร้างไฟล์ CSS เฉพาะส�
 import { Card } from "antd";
 import CheckAnswer from "../../service";
 
-const Island1_2: React.FC<{ onClose: () => void; addItem: (item: string, details: string) => void }> = ({ onClose, addItem }) => {
+const Island1_2: React.FC<{
+  onClose: () => void;
+  addItem: (item: string, details: string) => void;
+}> = ({ onClose, addItem }) => {
   const [name, setName] = useState(""); // เริ่มต้นเป็นค่าว่าง
   const [value, setValue] = useState("");
 
   // ตั้งค่าชื่อให้เป็น "Plaintext" เมื่อ component ถูก mount
   React.useEffect(() => {
     setName("Key");
-  }, []); // เรียกครั้งเดียวเมื่อ component ถูก mount
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,9 +38,21 @@ const Island1_2: React.FC<{ onClose: () => void; addItem: (item: string, details
       <div className="island1-2-popup-content">
         <Card bordered={false} className="island1-2-custom-cardh">
           <p>
-            🕵️‍♂️🕵️‍♂️​​🕵️‍♂️​​ ตามหา KEY!!! 🕵️‍♂️🕵️‍♂️​​🕵️‍♂️​​<br />
+            🕵️‍♂️🕵️‍♂️​​🕵️‍♂️​​ ตามหา KEY!!! 🕵️‍♂️🕵️‍♂️​​🕵️‍♂️​​
             <br />
-            Fhenanerr Havirefvgl bs Grpuabybtl jnf rfgnoyvfurq nf na choyvp nhgbabzbhf havirefvgl bhgfvqr gur pvivy freivpr flfgrz, haqre gur fhcreivfvba bs gur Eblny Gunv Tbireazrag, cebzbgvat nqzvavfgengvir cebsvpvrapl naq rssvpvrapl va vgf bcrengvbaf; n fpubyneyl pbzzhavgl pbafvfgvat bs gur yrnearq naq gur yrnearef, nf jryy nf Gur Xrl vf 22q97n2q0qs69op9nponn37750o105n456664q635pr507nnr09s0s8r0non5r91 nyy xvaqf bs xabjyrqtr va Negf, Fpvraprf naq Grpuabybtl, orarsvpvny gb obgu vaqvivqhnyf naq fbpvrgl.  Guvf havirefvgl svezyl cyrqtrf gb znvagnva rkpryyrapr va nyy bs vgf pbzzvgzragf; gb nqinapr gur dhnyvgl bs yvsr; gb frrx nccyvpngvbaf va gur pbyyrpgvba naq perngvba bs xabjyrqtr, zbeny rgubf naq jvfqbz, sbe gur rgreany tebjgu bs uhznaxvaq.
+            <br />
+            Fhenanerr Havirefvgl bs Grpuabybtl jnf rfgnoyvfurq nf na choyvp
+            nhgbabzbhf havirefvgl bhgfvqr gur pvivy freivpr flfgrz, haqre gur
+            fhcreivfvba bs gur Eblny Gunv Tbireazrag, cebzbgvat nqzvavfgengvir
+            cebsvpvrapl naq rssvpvrapl va vgf bcrengvbaf; n fpubyneyl pbzzhavgl
+            pbafvfgvat bs gur yrnearq naq gur yrnearef, nf jryy nf Gur Xrl vf
+            22q97n2q0qs69op9nponn37750o105n456664q635pr507nnr09s0s8r0non5r91 nyy
+            xvaqf bs xabjyrqtr va Negf, Fpvraprf naq Grpuabybtl, orarsvpvny gb
+            obgu vaqvivqhnyf naq fbpvrgl. Guvf havirefvgl svezyl cyrqtrf gb
+            znvagnva rkpryyrapr va nyy bs vgf pbzzvgzragf; gb nqinapr gur
+            dhnyvgl bs yvsr; gb frrx nccyvpngvbaf va gur pbyyrpgvba naq perngvba
+            bs xabjyrqtr, zbeny rgubf naq jvfqbz, sbe gur rgreany tebjgu bs
+            uhznaxvaq.
             <br />
           </p>
         </Card>
