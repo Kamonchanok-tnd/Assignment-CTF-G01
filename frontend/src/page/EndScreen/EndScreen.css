@@ -1,29 +1,33 @@
+
+.orange-background {
+  background-color: orange; /* สีพื้นหลังเมื่อแอนิเมชันจบ */
+}
+
 .end-screen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 1000%;
-    width: 1000%;
-    background-color: black;
-    color: white;
-    text-align: center;
-  }
-  
-  .gif-player {
-    width: 80%;
-    max-width: 600px;
-    height: auto;
-    border-radius: 10px;
-  }
-  
-  .congratulations-text {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #fff;
-    margin-top: 20px;
-    animation: fadeIn 2s ease-in-out; /* เอฟเฟกต์ข้อความแบบจาง */
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* ให้สูงเท่าความสูงของหน้าจอ */
+  width: 100vw; /* ให้กว้างเท่าความกว้างของหน้าจอ */
+  overflow: hidden; /* ซ่อนส่วนที่เกินหน้าจอ */
+  background-color: orange; /* สีพื้นหลัง (เปลี่ยนตามต้องการ) */
+}
+
+.gif-player {
+  width: 100%; /* ปรับให้ครอบคลุมหน้าจอทั้งกว้าง */
+  height: 100%; /* ปรับให้ครอบคลุมหน้าจอทั้งสูง */
+  object-fit: cover; /* ตัดส่วนที่เกินเพื่อรักษาอัตราส่วน */
+}
+
+
+.congratulations-text {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
   
   /* เอฟเฟกต์ข้อความ */
   @keyframes fadeIn {
