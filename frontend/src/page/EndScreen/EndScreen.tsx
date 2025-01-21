@@ -3,20 +3,20 @@ import "./EndScreen.css"; // ไฟล์ CSS สำหรับการจั�
 import dragonGif from "../../assets/dragon.gif"; // นำเข้าไฟล์ GIF
 
 const EndScreen: React.FC = () => {
-  const [showMessage, setShowMessage] = useState(false); // สถานะสำหรับแสดงข้อความ Congratulation
+  const [animationEnded, setAnimationEnded] = useState(false); // สถานะสำหรับจบแอนิเมชัน
 
   useEffect(() => {
     // ตั้งเวลาให้แสดงข้อความหลัง GIF เล่นจบ (เวลาประมาณ GIF เล่นจนจบ)
     const timer = setTimeout(() => {
-      setShowMessage(true); // แสดงข้อความ
-    }, 5000); // แทนด้วยระยะเวลา GIF (5 วินาทีสำหรับตัวอย่าง)
+      setAnimationEnded(true); // เปลี่ยนสถานะเมื่อแอนิเมชันจบ
+    }, 5400); // ระยะเวลา GIF (5 วินาทีสำหรับตัวอย่าง)
 
     return () => clearTimeout(timer); // ล้าง timeout เมื่อ component ถูกถอด
   }, []);
 
   return (
-    <div className="end-screen">
-      {!showMessage ? (
+    <div className={`end-screen ${animationEnded ? "orange-background" : ""}`}>
+      {!animationEnded ? (
         <img
           src={dragonGif} // ใช้ไฟล์ GIF
           alt="Dragon Celebration"
