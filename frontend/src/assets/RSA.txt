@@ -1,0 +1,8 @@
+#python code to help calculate
+plaintext(P) = ?
+e = ?
+n = ?
+
+# Modular exponentiation
+result_modular = pow(P, e, n)
+print("The answer is:" ,result_modular)

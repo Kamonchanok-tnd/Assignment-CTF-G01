@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import "./Island4.css";
 import IVFile from "../../assets/IV.txt"; // Import ไฟล์โดยตรง
 import CheckAnswer from "../../service";
+import {  message } from 'antd';
+import happy from '../../assets/happy.gif'
+import cry from "../../assets/cry.gif"
 
 const Island4: React.FC<{ onClose: () => void; addItem: (item: string, details: string) => void }> = ({ onClose, addItem }) => {
   const [name, setName] = useState(""); // เริ่มต้นเป็นค่าว่าง
@@ -19,11 +22,18 @@ const Island4: React.FC<{ onClose: () => void; addItem: (item: string, details: 
     e.preventDefault();
     try {
       const response = await CheckAnswer(name, value); // เรียกใช้ฟังก์ชัน CheckAnswer
-      alert(`Success: ${response.message}`); // แจ้งเตือนเมื่อคำตอบถูกต้อง
+      console.log(response.message);
+      message.success({
+        content: ' ถูกต้องแล้วจ้า ไปกันต่อ!!!',
+        icon: <img src={happy} alt="Success" style={{ width: 24, height: 24 }} />,
+      });
       addItem("heart", `${value}`); // เพิ่มไอเท็ม "iv-item" ไปยัง Homepage
       onClose(); // ปิด popup
     } catch (error) {
-      alert(`Wrong answer. Please try again.`); // แจ้งเตือนเมื่อคำตอบผิด
+      message.error({
+        content: ' ยังไม่ถูกลองใหม่นะ',
+        icon: <img src={cry} alt="Success" style={{ width: 24, height: 24 }} />,
+      });
     }
   };
 

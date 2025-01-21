@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import "./Island2.css"; // สร้างไฟล์ CSS เฉพาะสำหรับ Popup นี้
 import { Card } from "antd";
 import CheckAnswer from "../../service";
-
-const Island2: React.FC<{
-  onClose: () => void;
-  addItem: (item: string, details: string) => void;
-}> = ({ onClose, addItem }) => {
+import {  message } from 'antd';
+import happy from '../../assets/happy.gif'
+import cry from "../../assets/cry.gif"
+const Island2: React.FC<{ onClose: () => void; addItem: (item: string, details: string) => void }> = ({ onClose, addItem }) => {
   const [name, setName] = useState(""); // เริ่มต้นเป็นค่าว่าง
   const [value, setValue] = useState("");
 
@@ -19,14 +18,21 @@ const Island2: React.FC<{
     e.preventDefault();
     try {
       const response = await CheckAnswer(name, value); // เรียกใช้ฟังก์ชัน CheckAnswer
-      alert(`Success: ${response.message}`); // แจ้งเตือนเมื่อคำตอบถูกต้อง
+      console.log(response.message);
+      message.success({
+        content: ' ถูกต้องแล้วจ้า ไปกันต่อ!!!',
+        icon: <img src={happy} alt="Success" style={{ width: 24, height: 24 }} />,
+      });
       console.log("Correct answer submitted:", value); // Debugging ตรวจสอบคำตอบที่ส่งไป
       addItem("heart", `${value}`); // เพิ่มไอเท็มไปยัง Inventory พร้อมรายละเอียด
       console.log("Item added to inventory:", { item: "heart", details: `Correct answer: ${value}` }); // Debugging
       onClose(); // ปิด popup
     } catch (error) {
       console.error("Error submitting answer:", error); // Debugging ตรวจสอบ error
-      alert(`Wrong answer. Please try again.`); // แจ้งเตือนเมื่อคำตอบผิด
+      message.error({
+        content: ' ยังไม่ถูกลองใหม่นะ',
+        icon: <img src={cry} alt="Success" style={{ width: 24, height: 24 }} />,
+      });
     }
   };
 
