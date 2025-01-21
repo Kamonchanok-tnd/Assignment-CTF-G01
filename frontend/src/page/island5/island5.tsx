@@ -39,7 +39,7 @@ const Island5: React.FC<{ onClose: () => void }> = ({ onClose }) => {
         <p>
         🏆​🏆​🏆​ มาพิชิตการแข่งขันนี้กันเถอะ!!! 🏆​🏆​🏆​
         <br/><br/>
-        format : flag&#123;hash&#125;
+        ให้นำ ciphertext มาเข้ารหัสเพื่อตอบคำถามตาม format : flag&#123;hash&#125;
         <br/>
         hash : 
         <div className="row">
