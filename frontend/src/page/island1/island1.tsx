@@ -53,7 +53,7 @@ const Island1: React.FC<{ onClose: () => void; addItem: (item: string, details: 
       {showIsland1 && (
         <div className="popup-blue1">
           <div className="popup-header">
-            <h2>Island 1 Challenge</h2>
+            <h2>Challenge</h2>
             <button className="close-button" onClick={onClose}>
               X
             </button>

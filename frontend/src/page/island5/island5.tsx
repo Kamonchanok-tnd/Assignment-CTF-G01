@@ -38,7 +38,7 @@ const Island5: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     <div className="Island5 ">
     <div className="popup-blue">
       <div className="popup-header">
-        <h2>Island 5 Challenge</h2>
+        <h2>Hash function Challenge</h2>
         <button className="close-button" onClick={onClose}>
           X
         </button>

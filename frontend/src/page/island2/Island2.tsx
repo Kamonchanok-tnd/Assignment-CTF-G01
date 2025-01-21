@@ -39,7 +39,7 @@ const Island2: React.FC<{ onClose: () => void; addItem: (item: string, details: 
   return (
     <div className="popup-blue">
       <div className="popup-header">
-        <h2>Island 2 Challenge</h2>
+        <h2>PLAINTEXT Challenge</h2>
         <button className="close-button" onClick={onClose}>
           X
         </button>

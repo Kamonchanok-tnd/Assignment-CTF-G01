@@ -39,7 +39,7 @@ const Island1_2: React.FC<{
   return (
     <div className="island1-2-popup-blue">
       <div className="island1-2-popup-header">
-        <h2>Island 1-2 Challenge</h2>
+        <h2>KEY Challenge</h2>
         <button className="island1-2-close-button" onClick={onClose}>
           X
         </button>
