@@ -50,12 +50,7 @@ const Island2: React.FC<{ onClose: () => void; addItem: (item: string, details: 
             🕵️‍♂️🕵️‍♂️​​🕵️‍♂️​​ ตามหา PLAINTEXT!!! 🕵️‍♂️🕵️‍♂️​​🕵️‍♂️​​
             <br />
             <br />
-            TheSu ranar eeUnu versu tyo fTec hnolo gyusa natuo nalpu blucu nuv
-            ersut yunNa khonR atcha sumaP rov unceT heunu versu tywa sest ablus
-            hedon 27Jul y1990 becom ungfu llyo perat uonal ThePl aunte xtusu
-            can't fundy ours ulver lunun gudon 'tmean tojud geun1 993ut usnam
-            edaft erTh aoSur anaru thelo calhe roune ofNa khonR atcha sumau
-            tuson eofnu neNa tuona lRese archU nuver sutue sofTh aulan d
+            TheSura qaree Uqive rsity ofTec hqolo gyisa qatio qalp ublic uqive rsity iqqa khoqR atcha simaP rovi qceTh euqiv ersit ywase stab lished oq27J uly19 90bec omiq gfull yoper atioq alThe Plaiq texti sIcaq't fiqdy oursi lverl iqiqi doq't meaq tojud geiq1 993It isq ameda fterT haoSu raqar ithel ocalh eroiq eofqa khoqR atcha simaI tisoq eofqi qeqat ioqal Resea rchU qiver sities ofTha ilaqd
             <br />
           </p>
         </Card>

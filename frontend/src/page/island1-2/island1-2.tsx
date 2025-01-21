@@ -50,18 +50,7 @@ const Island1_2: React.FC<{
             🕵️‍♂️🕵️‍♂️​​🕵️‍♂️​​ ตามหา KEY!!! 🕵️‍♂️🕵️‍♂️​​🕵️‍♂️​​
             <br />
             <br />
-            Fhenanerr Havirefvgl bs Grpuabybtl jnf rfgnoyvfurq nf na choyvp
-            nhgbabzbhf havirefvgl bhgfvqr gur pvivy freivpr flfgrz, haqre gur
-            fhcreivfvba bs gur Eblny Gunv Tbireazrag, cebzbgvat nqzvavfgengvir
-            cebsvpvrapl naq rssvpvrapl va vgf bcrengvbaf; n fpubyneyl pbzzhavgl
-            pbafvfgvat bs gur yrnearq naq gur yrnearef, nf jryy nf Gur Xrl vf
-            22q97n2q0qs69op9nponn37750o105n456664q635pr507nnr09s0s8r0non5r91 nyy
-            xvaqf bs xabjyrqtr va Negf, Fpvraprf naq Grpuabybtl, orarsvpvny gb
-            obgu vaqvivqhnyf naq fbpvrgl. Guvf havirefvgl svezyl cyrqtrf gb
-            znvagnva rkpryyrapr va nyy bs vgf pbzzvgzragf; gb nqinapr gur
-            dhnyvgl bs yvsr; gb frrx nccyvpngvbaf va gur pbyyrpgvba naq perngvba
-            bs xabjyrqtr, zbeny rgubf naq jvfqbz, sbe gur rgreany tebjgu bs
-            uhznaxvaq.
+            Sjgzczg33 Uc7k3gh7in d4 T316cdad5n lzh 3hiz0a7h632 zh zc ej0a71 zjidcdbdjh jc7k3gh7in djih723 i63 17k7a h3gk713 hnhi3b, jc23g i63 hje3gk7h7dc d4 i63 Rdnza T6z7 Gdk3gcb3ci, egdbdi7c5 z2b7c7higzi7k3 egd47173c1n zc2 3447173c1n 7c 7ih de3gzi7dch; z h16dazgan 1dbbjc7in 1dch7hi7c5 d4 i63 a3zgc32 zc2 i63 a3zgc3gh, zh l3aa zh T63 K3n 7h rr2ywzr2p24vy01yz10zzswwup0qpuztuvvvt2vsu13upwzz3py4p4x3pz0zu3yq zaa 97c2h d4 9cdla3253 7c Agih, S173c13h zc2 T316cdad5n, 03c34717za id 0di6 7c27k72jzah zc2 hd173in.  T67h jc7k3gh7in 47gban ea3253h id bz7ciz7c 3m13aa3c13 7c zaa d4 7ih 1dbb7ib3cih; id z2kzc13 i63 fjza7in d4 a743; id h339 zeea71zi7dch 7c i63 1daa31i7dc zc2 1g3zi7dc d4 9cdla3253, bdgza 3i6dh zc2 l7h2db, 4dg i63 3i3gcza 5gdli6 d4 6jbzc97c2.
             <br />
           </p>
         </Card>
