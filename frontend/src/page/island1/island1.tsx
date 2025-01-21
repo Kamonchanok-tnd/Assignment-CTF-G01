@@ -10,7 +10,7 @@ import happy from '../../assets/happy.gif'
 import cry from "../../assets/cry.gif"
 import RSACAL from "../../assets/RSA.txt"
 
-const Island1: React.FC<{ onClose: () => void; addItem: (item: string, details: string) => void }> = ({ onClose, addItem }) => {
+const Island1: React.FC<{ onClose: () => void; addItem: (item: string, details: string,name: string) => void }> = ({ onClose, addItem }) => {
   const [name, setName] = useState(""); // ชื่อ
   const [value, setValue] = useState(""); // คำตอบที่ผู้ใช้กรอก
   const [showIsland1, setShowIsland1] = useState(true); // ควบคุมการแสดง Island1

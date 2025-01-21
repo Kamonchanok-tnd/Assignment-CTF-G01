@@ -7,15 +7,15 @@ import Island4 from "../island4/island4";
 import Island5 from "../island5/island5";
 
 const HomePage: React.FC = () => {
-  const [inventory, setInventory] = useState<{ item: string; details: string }[]>([]);
+  const [inventory, setInventory] = useState<{ item: string; details: string; name: string }[]>([]);
   const [showPopup, setShowPopup] = useState(false);
   const [showDetailPopup, setShowDetailPopup] = useState(false); // Popup สำหรับแสดงรายละเอียดไอเทม
-  const [selectedItem, setSelectedItem] = useState<{ item: string; details: string } | null>(null); // ไอเทมที่เลือก
+  const [selectedItem, setSelectedItem] = useState<{ item: string; details: string; name: string } | null>(null); // ไอเทมที่เลือก
   const [currentChallenge, setCurrentChallenge] = useState<number | null>(null);
 
-  const addItemToInventory = (item: string, details: string) => {
+  const addItemToInventory = (item: string, details: string,name: string) => {
     if (inventory.length < 3) {
-      setInventory([...inventory, { item, details }]);
+      setInventory([...inventory, { item, details, name}]);
     } else {
       alert("Inventory is full!");
     }
@@ -46,7 +46,7 @@ const HomePage: React.FC = () => {
         return (
           <Island1
             onClose={handlePopupClose}
-            addItem={(item, details) => addItemToInventory(item, details)} // ส่ง addItem ไปที่ Island1
+            addItem={(item,details,name) => addItemToInventory(item, details,name)} // ส่ง addItem ไปที่ Island1
           />
         );
       
@@ -54,7 +54,7 @@ const HomePage: React.FC = () => {
         return (
           <Island2
             onClose={handlePopupClose}
-            addItem={(item, details) => addItemToInventory(item, details)}
+            addItem={(item,details,name) => addItemToInventory(item,details,name)}
           />
         );
       case 3:
@@ -63,7 +63,7 @@ const HomePage: React.FC = () => {
         return (
           <Island4
             onClose={handlePopupClose}
-            addItem={(item, details) => addItemToInventory(item, details)}
+            addItem={(item,details,name) => addItemToInventory(item,details,name)}
           />
         );
       case 5:
@@ -139,6 +139,7 @@ const HomePage: React.FC = () => {
         X
       </button>
       <h2>Item Details</h2>
+      <h4>{selectedItem.name}</h4>
       <p>{selectedItem.details}</p>
     </div>
   </div>

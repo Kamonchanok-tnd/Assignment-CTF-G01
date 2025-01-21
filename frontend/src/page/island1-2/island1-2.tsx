@@ -7,7 +7,7 @@ import cry from "../../assets/cry.gif"
 import {  message } from 'antd';
 const Island1_2: React.FC<{
   onClose: () => void;
-  addItem: (item: string, details: string) => void;
+  addItem: (item: string, details: string, name: string) => void;
 }> = ({ onClose, addItem }) => {
   const [name, setName] = useState(""); // ชื่อ challenge
   const [value, setValue] = useState(""); // คำตอบของผู้ใช้
@@ -26,7 +26,7 @@ const Island1_2: React.FC<{
         content: ' ถูกต้องแล้วจ้า ไปกันต่อ!!!',
         icon: <img src={happy} alt="Success" style={{ width: 24, height: 24 }} />,
       });
-      addItem("heart", ` ${value}`); // ส่งข้อมูลไอเท็มไปยัง inventory
+      addItem("heart", ` ${value}`,` ${name}`); // ส่งข้อมูลไอเท็มไปยัง inventory
       onClose(); // ปิด popup
     } catch (error) {
       message.error({

@@ -6,7 +6,7 @@ import {  message } from 'antd';
 import happy from '../../assets/happy.gif'
 import cry from "../../assets/cry.gif"
 
-const Island4: React.FC<{ onClose: () => void; addItem: (item: string, details: string) => void }> = ({ onClose, addItem }) => {
+const Island4: React.FC<{ onClose: () => void; addItem: (item: string, details: string,name: string) => void }> = ({ onClose, addItem }) => {
   const [name, setName] = useState(""); // เริ่มต้นเป็นค่าว่าง
   const [value, setValue] = useState("");
 
@@ -27,7 +27,7 @@ const Island4: React.FC<{ onClose: () => void; addItem: (item: string, details: 
         content: ' ถูกต้องแล้วจ้า ไปกันต่อ!!!',
         icon: <img src={happy} alt="Success" style={{ width: 24, height: 24 }} />,
       });
-      addItem("heart", `${value}`); // เพิ่มไอเท็ม "iv-item" ไปยัง Homepage
+      addItem("heart", `${value}`,`${name}`); // เพิ่มไอเท็ม "iv-item" ไปยัง Homepage
       onClose(); // ปิด popup
     } catch (error) {
       message.error({
